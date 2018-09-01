@@ -1,0 +1,124 @@
+################################################################################
+#
+#    Licensed to the Apache Software Foundation (ASF) under one or more
+#    contributor license agreements.  See the NOTICE file distributed with
+#    this work for additional information regarding copyright ownership.
+#    The ASF licenses this file to You under the Apache License, Version 2.0
+#    (the "License"); you may not use this file except in compliance with
+#    the License.  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS,
+#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#    See the License for the specific language governing permissions and
+#    limitations under the License.
+#
+################################################################################
+
+#
+# Comma separated list of features repositories to register by default
+#
+featuresRepositories = \
+    mvn:org.apache.karaf.features/framework/4.1.5/xml/features, \
+    mvn:org.apache.karaf.features/spring/4.1.5/xml/features, \
+    mvn:org.apache.karaf.features/standard/4.1.5/xml/features, \
+    mvn:org.apache.karaf.features/enterprise/4.1.5/xml/features, \
+    mvn:org.apache.camel.karaf/apache-camel/${apache.camel.version}/xml/features, \
+    mvn:org.apache.cxf.karaf/apache-cxf/${apache.cxf.version}/xml/features
+
+#
+# Comma separated list of features to install at startup
+#
+featuresBoot = \
+    standard/4.1.5, \
+    instance/4.1.5, \
+    log/4.1.5, \
+    ssh/4.1.5, \
+    wrapper/4.1.5, \
+    webconsole/4.1.5, \
+    aries-blueprint/4.1.5, \
+    scheduler/4.1.5, \
+    minimal/4.1.5, \
+    feature/4.1.5, \
+    service-wrapper/4.1.5, \
+    jaas/4.1.5, \
+    pax-http-service, \
+    deployer/4.1.5, \
+    diagnostic/4.1.5, \
+    jetty/8.1.14.v20131031, \
+    jaas-boot, \
+    bundle/4.1.5, \
+    kar/4.1.5, \
+    jolokia/1.3.5, \
+    package/4.1.5, \
+    scr/4.1.5, \
+    framework-security/4.1.5, \
+    profile/4.1.5, \
+    war/4.1.5, \
+    httplite/4.1.5, \
+    framework, \
+    system/4.1.5, \
+    jasypt-encryption/4.1.5, \
+    eventadmin/4.1.5, \
+    shell/4.1.5, \
+    management/4.1.5, \
+    service/4.1.5, \
+    blueprint-web/4.1.5, \
+    service-security/4.1.5, \
+    http/4.1.5, \
+    shell-compat/4.1.5, \
+    http-whiteboard/4.1.5, \
+    aries-proxy/4.1.5, \
+    config/4.1.5, \
+    wrap, \
+    obr/4.1.5, \
+    jms, \
+    pax-jdbc, \
+    pax-jdbc-pool-hikaricp, \
+    pax-jdbc-mssql, \
+#    pax-jdbc-oracle, \
+    camel-scr/${apache.camel.version}, \
+    camel-blueprint/${apache.camel.version}, \
+    camel-jms/${apache.camel.version}, \
+    camel-beanio/${apache.camel.version}, \
+    camel-sql/${apache.camel.version}, \
+    cxf/${apache.cxf.version}, \
+    cxf-jackson/${apache.cxf.version}
+
+#
+# Resource repositories (OBR) that the features resolver can use
+# to resolve requirements/capabilities
+#
+# The format of the resourceRepositories is 
+# resourceRepositories=[xml:url|json:url],...
+# for Instance:
+#
+#resourceRepositories=xml:http://host/path/to/index.xml
+# or
+#resourceRepositories=json:http://host/path/to/index.json
+#
+
+#
+# Defines if the boot features are started in asynchronous mode (in a dedicated thread)
+#
+featuresBootAsynchronous=false
+
+#
+# Service requirements enforcement
+#
+# By default, the feature resolver checks the service requirements/capabilities of
+# bundles for new features (xml schema >= 1.3.0) in order to automatically installs
+# the required bundles.
+# The following flag can have those values:
+#   - disable: service requirements are completely ignored
+#   - default: service requirements are ignored for old features
+#   - enforce: service requirements are always verified
+#
+#serviceRequirements=default
+
+#
+# Store cfg file for config element in feature
+#
+#configCfgStore=true
